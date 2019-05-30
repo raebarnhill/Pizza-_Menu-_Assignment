@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="pizza.css" />
+	<title>Online Order Form</title>
+</head>
+<body>
+	<div id="menuBG">
+	<div class="container">
+		<h1>Place Your Order Below:</h1>
+		<h4>Just tell us what you'd like on your pie and submit!</h4>
+		
+		<!---Pizza Size------->
+	
+		<div class="container">
+			<form id="FrmMenu">
+			<h3>Please choose the size of your 'Za:</h3>
+	
+				<input type="radio" name="size" value="personal" checked> Personal ($6.00) <br>
+				<input type="radio" name="size" value="medium"> Medium ($10.00) <br>
+				<input type="radio" name="size" value="large"> Large ($14.00) <br>
+				<input type="radio" name="size" value="xlarge"> Extra Large ($16.00) <br>
+		</div>
+
+
+		<!----Crust------>
+			<h3>Select your crust:</h3>
+				<input type="radio" name="crust" value="plain" checked> Plain <br>
+				<input type="radio" name="crust" value="garlic"> Garlic Butter <br>
+				<input type="radio" name="crust" value="cheesestuffed"> Cheese Stuffed (+$3.00) <br>
+				<input type="radio" name="crust" value="spicy"> Spicy <br>
+				<input type="radio" name="crust" value="house"> House Special <br>
+		
+			
+		<!-----Cheese---->
+			<h3>Select your cheese:</h3>
+			
+				<input type="radio" name="cheese" value="regular" checked> Regular <br>
+				<input type="radio" name="cheese" value="nocheese"> No Cheese <br>
+				<input type="radio" name="cheese" value="extracheese"> Extra Cheese (+$3.00) <br>
+			
+		
+		<!------Sauce------>
+			<h3>Select your sauce:</h3>
+			
+				<input type="radio" name="sauce" value="marinara" checked> Marinara <br>
+				<input type="radio" name="sauce" value="white"> White Sauce <br>
+				<input type="radio" name="sauce" value="barbeque"> Barbeque <br>
+				<input type="radio" name="sauce" value="nosauce"> No Sauce <br>
+			
+		
+		<!------Toppings---->
+		
+			<h3>Select your toppings:</h3>
+				<h5>Meats(choose one, +$1.00 for each additional):</h5>
+				
+					<div>
+						<input class="meats" type="checkbox" name="meat" value="pepperoni"checked>
+						<label for="pepperoni">Pepperoni</label>
+						</div>
+
+					<div>
+						<input class="meats" type="checkbox" name="meat" value="sausage">
+						<label for="sausage">Sausage</label>
+					</div>
+
+					<div>
+						  <input class="meats" type="checkbox" name="meat" value="canadian-bacon">
+						  <label for="canadian-bacon">Canadian Bacon</label>
+					</div>
+
+					<div>
+						  <input class="meats" type="checkbox" name="meat" value="beef">
+						  <label for="beef">Ground Beef</label>
+					</div>
+
+					<div>
+						<input class="meats" type="checkbox" name="meat" value="anchovies">
+						<label for="anchovies">Anchovies</label>
+					</div>
+
+					<div>
+						<input class="meats" type="checkbox" name="meat" value="chicken">
+						<label for="chicken">Chicken</label>
+					</div>
+				
+				<h5>Choose your veggies(choose one, +$1.00 for each additional):</h5>
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="tomatoes"checked>
+						<label for="tomatoes">Tomatoes</label>
+						</div>
+
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="onions">
+						<label for="onions">Onions</label>
+					</div>
+					
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="olives">
+						<label for="olives">Olives</label>
+					</div>
+					
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="peppers">
+						<label for="peppers">Green Peppers</label>
+						</div>
+
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="mushrooms">
+						<label for="mushrooms">Mushrooms</label>
+					</div>
+					
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="pineapple">
+						<label for="pineapple">Pineapples</label>
+						</div>
+
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="spinach">
+						<label for="spinach">Spinach</label>
+					</div>
+					
+					<div>
+						<input class="veggies" type="checkbox" name="veggie" value="jalepeno">
+						<label for="jalepeno">Jalepe&#241;os</label>
+						</div><br><br>
+						
+				<div id="cart">
+					<div id="showText"></div>
+					<div id="totalPrice"></div>
+				</div>
+
+				<!----Order Button----------->
+				
+				<input id="btnOrder" type="button" onclick="getReceipt()" 
+				value="Place Order">
+
+				
+			</div>
+			
+	
+		<!----Modal Javascript-------->
+		
+		<script>
+			
+		//Get the modal
+		var modal = document.getElementById("myModal");
+		
+		//Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+		
+		//Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		
+		//When user clicks on the button, open the modal
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+		
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		modal.style.display = "none";
+		}
+		
+		//When the user clocks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+		
+				
+		
+		</script>
+
+
+<script src="pizza.js"></script>
+
+
+</body>
+</html>
