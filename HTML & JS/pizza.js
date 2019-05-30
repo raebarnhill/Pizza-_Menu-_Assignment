@@ -42,7 +42,7 @@ function getMeat(runningTotal,text1) {
 		}
 	}
 	var meatCount = selectedMeat.length;
-	if (meatCount > 1) {
+	if (meatCount >= 1) {
 		meatTotal = (meatCount - 1);
 	} else {
 		meatTotal = 0;
@@ -53,7 +53,8 @@ function getMeat(runningTotal,text1) {
 	console.log("meat text1: "+text1);
 	console.log("Purchase Total: "+"$"+runningTotal+".00");
 	document.getElementById("showText").innerHTML=text1;
-	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	getVeggie(runningTotal,text1);
 };	
 		
 		
@@ -62,23 +63,34 @@ function getVeggie(runningTotal,text1) {
 	var selectedVeggie = [];
 	var veggieArray = document.getElementsByClassName("veggies");
 	for (var k = 0; k < veggieArray.length; k++) {
-		if (veggieArray[j].checked) {
+		if (veggieArray[k].checked) {
 			selectedVeggie.push(veggieArray[k].value);
 			console.log("selected veggie item: ("+veggieArray[k].value+")");
 			text1 = text1+veggieArray[k].value+meatArray[j].value+"<br>";
 		}
 	}
 	var veggieCount = selectedVeggie.length;
-	if (veggieCount > 1) {
+	if (veggieCount >= 1) {
 		veggieTotal = (veggieCount - 1);
 	} else {
 		veggieTotal = 0;
 	}
 	runningTotal = (runningTotal + veggieTotal);
+	for (var k = 0; k < veggieArray.length; k++) {
+		text1 = text1+selectedVeggie[k]+"<br>";
+		if (veggieCount =< 1) {
+			text2 = text2+0+ "<br>";
+			veggieCount = veggieCount - 1; {
+				else if (veggieCount == 2) {
+					veggieCount = veggieCount - 1;
+				}
+			}
 	console.log("total selected veggie items: "+veggieCount);
 	console.log(veggieCount+" veggie - 1 free veggie = "+"$"+veggieTotal+".00");
 	console.log("veggie text1: "+text1);
 	console.log("Purchase Total: "+"$"+runningTotal+".00");
 	document.getElementById("showText").innerHTML=text1;
 	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	getCheese(runningTotal,text1);
+	
 };
