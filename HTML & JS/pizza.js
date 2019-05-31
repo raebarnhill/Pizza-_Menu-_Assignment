@@ -66,7 +66,7 @@ function getVeggie(runningTotal,text1) {
 		if (veggieArray[k].checked) {
 			selectedVeggie.push(veggieArray[k].value);
 			console.log("selected veggie item: ("+veggieArray[k].value+")");
-			text1 = text1+veggieArray[k].value+meatArray[j].value+"<br>";
+			text1 = text1+veggieArray[k].value+"<br>";
 		}
 	}
 	var veggieCount = selectedVeggie.length;
@@ -78,9 +78,9 @@ function getVeggie(runningTotal,text1) {
 	runningTotal = (runningTotal + veggieTotal);
 	for (var k = 0; k < veggieArray.length; k++) {
 		text1 = text1+selectedVeggie[k]+"<br>";
-		if (veggieCount =< 1) {
-			text2 = text2+0+ "<br>";
-			veggieCount = veggieCount - 1; {
+		if (veggieCount <= 1) {
+			// text2 = text2+0+ "<br>"; 
+		veggieCount = veggieCount - 1; }
 				else if (veggieCount == 2) {
 					veggieCount = veggieCount - 1;
 				}
@@ -91,6 +91,6 @@ function getVeggie(runningTotal,text1) {
 	console.log("Purchase Total: "+"$"+runningTotal+".00");
 	document.getElementById("showText").innerHTML=text1;
 	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
-	getCheese(runningTotal,text1);
+	// getCheese(runningTotal,text1);
 	
 };

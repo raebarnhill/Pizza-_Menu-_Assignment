@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Pizza Drill Demo</title>
+		<link rel="stylesheet" type="text/css" href="pizza.css">
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 		<meta content="width=device-width,initial-scale=1.0" name="viewport">
 		<style>#menuBG{width:400px;height:470px;margin:10px auto;}#frmMenu{width:400px;height:200px;}
@@ -13,8 +14,6 @@
 	<body>
 		<div id="menuBG">
 			<h1 style="margin:0 0px 0 20px;">Pizza Drill Tutorial</h1>
-			<input id="btnOrder" type="button" onclick="getReceipt()" 
-				value="Place Order">
 			<form id="frmMenu">
 				<div class="menu left">
 					<h3>Size:</h3>
@@ -81,6 +80,10 @@
 				</div>
 			</form>
 		</div>
+		
+		<input id="btnOrder" type="button" onclick="getReceipt()" 
+				value="Place Order">
+				
 		<script src="pizza.js"></script>
 	</body>
 </html>
