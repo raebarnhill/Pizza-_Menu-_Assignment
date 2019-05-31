@@ -76,15 +76,6 @@ function getVeggie(runningTotal,text1) {
 		veggieTotal = 0;
 	}
 	runningTotal = (runningTotal + veggieTotal);
-	for (var k = 0; k < veggieArray.length; k++) {
-		text1 = text1+selectedVeggie[k]+"<br>";
-		if (veggieCount <= 1) {
-			// text2 = text2+0+ "<br>"; 
-		veggieCount = veggieCount - 1; }
-				else if (veggieCount == 2) {
-					veggieCount = veggieCount - 1;
-				}
-			}
 	console.log("total selected veggie items: "+veggieCount);
 	console.log(veggieCount+" veggie - 1 free veggie = "+"$"+veggieTotal+".00");
 	console.log("veggie text1: "+text1);
