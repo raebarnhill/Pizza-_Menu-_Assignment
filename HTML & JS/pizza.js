@@ -91,6 +91,31 @@ function getVeggie(runningTotal,text1) {
 	console.log("Purchase Total: "+"$"+runningTotal+".00");
 	document.getElementById("showText").innerHTML=text1;
 	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
-	// getCheese(runningTotal,text1);
+	getCheese(runningTotal,text1);
+	
+};
+	function getCheese(runningTotal,text1) {
+	var cheeseTotal = 0;
+	var selectedCheese = [];
+	var cheeseArray = document.getElementsByClassName("cheese");
+	for (var l = 0; l < cheeseArray.length; l++) {
+		if (cheeseArray[l].checked) {
+			selectedCheese.push(cheeseArray[l].value);
+			console.log("selected cheese item: ("+cheeseArray[l].value+")");
+			text1 = text1+cheeseArray[l].value+"<br>";
+		}
+	}
+	if (selectedCheese == "extraCheese") {
+		cheeseTotal = 3;
+	} else {
+		cheeseTotal = 0;
+	}
+	runningTotal = (runningTotal + cheeseTotal);
+	console.log("total selected cheese items: "+cheeseTotal);
+	console.log(" cheese = "+"$"+cheeseTotal+".00");
+	console.log("cheese text1: "+text1);
+	console.log("Purchase Total: "+"$"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 	
 };
