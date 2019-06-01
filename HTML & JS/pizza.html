@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Pizza Drill Demo</title>
-		<link rel="stylesheet" type="text/css" href="pizza.css">
+		<title>Pizza Order Form</title>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 		<meta content="width=device-width,initial-scale=1.0" name="viewport">
-		<style>#menuBG{width:400px;height:470px;margin:10px auto;}#frmMenu{width:400px;height:200px;}
+		<style>body{background-color:#939cff;font-family:Helvetica Neue, helvetica, serif-sans;}#menuBG{width:400px;height:470px;margin:10px auto;}#frmMenu{width:400px;height:200px;}
 		#totalPrice{width:200px;height:190px;margin:0 auto;float:right;}.left{width:200px;height:200px;float:left;}
 		.right{width:200px;height:200px;float:right;}#showText{width:200px;height:190px;margin:0px auto;float:left;}
-		#cart{top:0;margin:0px auto;width:400px;height:200px;}#btnOrder{margin:10px 0px 0px 100px;width:100px;height:40px}
+		#cart{top:0;margin:0px auto;width:400px;height:200px;}#btnOrder{box-shadow:inset 0px 0px 14px -3px #f2fadc;
+		background:linear-gradient(to bottom, #c9cad6 5%, #9ba892 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbe6c4', endColorstr='#9ba892',GradientType=0);
+		background-color:#afb0b5;border-radius:6px;border:1px solid #000;display:inline-block;cursor:pointer;color:#000;
+		font-family:Arial;font-size:15px;font-weight:bold;padding:6px 24px;text-decoration:none;text-shadow:0px 1px 0px #ced9bf; position: relative;
+		width: 50%;position: bottom;padding:10px;margin:25px}
 		</style>
 	</head>
 	<body>
 		<div id="menuBG">
-			<h1 style="margin:0 0px 0 20px;">Pizza Drill Tutorial</h1>
+			<h1 style="margin:0 0px 0 20px;">Pizza Order Form</h1>
 			<form id="frmMenu">
 				<div class="menu left">
-					<h3>Size:</h3>
+					<h4>Size:</h4>
 					<input class="size" type="radio" name="Size" value="Personal Pizza"> Personal Pizza<br>
 					<input class="size" type="radio" name="Size" value="Medium Pizza"> Medium Pizza<br>
 					<input class="size" type="radio" name="Size" value="Large Pizza" checked> Large Pizza<br>
@@ -24,17 +27,18 @@
 				</div>
 				
 						<!----Crust------>
-			<h3>Select your crust:</h3>
-				<input type="radio" name="crust" value="plain" checked> Plain <br>
-				<input type="radio" name="crust" value="garlic"> Garlic Butter <br>
-				<input type="radio" name="crust" value="cheesestuffed"> Cheese Stuffed (+$3.00) <br>
-				<input type="radio" name="crust" value="spicy"> Spicy <br>
-				<input type="radio" name="crust" value="house"> House Special <br>
-		
+			<div class="menu right">
+			<h4>Select your crust:</h4>
+				<input type="radio" class="crust" name="Crust" value="Plain" checked> Plain <br>
+				<input type="radio" class="crust" name="Crust" value="Garlic Butter"> Garlic Butter <br>
+				<input type="radio" class="crust" name="Crust" value="Cheese Stuffed"> Cheese Stuffed (+$3.00) <br>
+				<input type="radio" class="crust" name="Crust" value="Spicy"> Spicy <br>
+				<input type="radio" class="crust" name="Crust" value="House Special"> House Special <br>
+			</div>
 			
 		<!-----Cheese---->
-			<div class="container">
-			<h3>Select your cheese:</h3>
+			<div class="menu left">
+			<h4>Select your cheese:</h4>
 				<input type="radio" class="cheese" name="Cheese" value="Regular" checked> Regular<br>
 				<input type="radio" class="cheese" name="Cheese" value="No Cheese"> No Cheese<br>
 				<input type="radio" class="cheese" name="Cheese" value="Extra Cheese"> Extra Cheese (+$3.00)<br>
@@ -42,20 +46,21 @@
 			
 		
 		<!------Sauce------>
-			<h3>Select your sauce:</h3>
+			<div class="menu right">
+			<h4>Select your sauce:</h4>
 			
-				<input type="radio" name="sauce" value="marinara" checked> Marinara <br>
-				<input type="radio" name="sauce" value="white"> White Sauce <br>
-				<input type="radio" name="sauce" value="barbeque"> Barbeque <br>
-				<input type="radio" name="sauce" value="nosauce"> No Sauce <br>
-			
+				<input type="radio" class="sauce" name="Sauce" value="Marinara" checked> Marinara <br>
+				<input type="radio" class="sauce" name="Sauce" value="White Sauce"> White Sauce <br>
+				<input type="radio" class="sauce" name="Sauce" value="Barbeque"> Barbeque <br>
+				<input type="radio" class="sauce" name="Sauce" value="No Sauce"> No Sauce <br>
+			</div>
 		
 		<!------Toppings---->
 				
 				
 				
 				<div class="menu right">
-					<h3>Meats:</h3>
+					<h4>Meats:</h4>
 					<input class="meats" type="checkbox" name="Meat" value="Pepperoni"> Pepperoni<br>
 					<input class="meats" type="checkbox" name="Meat" value="Sausage"> Sausage <br>
 					<input class="meats" type="checkbox" name="Meat" value="Canadian Bacon"> Canadian Bacon<br> 
@@ -65,7 +70,7 @@
 				</div>
 				
 				<div class="menu middle">
-					<h3>Veggies:</h3>
+					<h4>Veggies:</h4>
 					<input class="veggies" type="checkbox" name="Veggie" value="Tomatoes"> Tomatoes<br>
 					<input class="veggies" type="checkbox" name="Veggie" value="Onions"> Onions <br>
 					<input class="veggies" type="checkbox" name="Veggie" value="Green Peppers"> Green Peppers<br> 
@@ -74,6 +79,10 @@
 					<input class="veggies" type="checkbox" name="Veggie" value="Jalepenos"> Jalepenos<br>
 				</div>
 				
+					<!---button--->
+		<input id="btnOrder" type="button" class="myButton" onclick="getReceipt()" 
+				value="Place Order">
+		
 				
 				<div id="cart">
 					<div id="showText"></div>
@@ -82,8 +91,8 @@
 			</form>
 		</div>
 		
-		<input id="btnOrder" type="button" onclick="getReceipt()" 
-				value="Place Order">
+		
+	
 				
 		<script src="pizza.js"></script>
 	</body>

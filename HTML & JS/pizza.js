@@ -108,5 +108,61 @@ function getVeggie(runningTotal,text1) {
 	console.log("subtotal: $"+runningTotal+".00");
 	document.getElementById("showText").innerHTML=text1;
 	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	getCrust(runningTotal,text1);
+};
+
+	function getCrust(runningTotal,text1) {
+	var crustTotal = 0;
+	var crustArray = document.getElementsByClassName("crust");
+	for (var m = 0; m < crustArray.length; m++) {
+		if (crustArray[m].checked) {
+			var selectedCrust = crustArray[m].value;
+			text1 = text1+selectedCrust+"<br>";
+		}
+	}
+	if (selectedCrust === "Cheese Stuffed") {
+		crustTotal = 3; 
+	} else if (selectedCrust === "Plain") {
+		crustTotal = 0;
+	} else if (selectedCrust === "Garlic Butter") {
+		crustTotal = 0;
+	} else if (selectedCrust === "Spicy") {
+		crustTotal = 0;
+	} else if (selectedCrust === "House Special") {
+		crustTotal = 0;
+	}
+	runningTotal = (runningTotal + crustTotal);
+	console.log(selectedCrust+" = $"+crustTotal+".00");
+	console.log("crust text1: "+text1);
+	console.log("subtotal: $"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+	getSauce(runningTotal, text1);
+};
+
+	function getSauce(runningTotal,text1) {
+	var sauceTotal = 0;
+	var sauceArray = document.getElementsByClassName("sauce");
+	for (var n = 0; n < sauceArray.length; n++) {
+		if (sauceArray[n].checked) {
+			var selectedSauce = sauceArray[n].value;
+			text1 = text1+selectedSauce+"<br>";
+		}
+	}
+	if (selectedSauce === "Marinara") {
+		sauceTotal = 0; 
+	} else if (selectedSauce === "White Sauce") {
+		sauceTotal = 0;
+	} else if (selectedSauce === "Barbeque") {
+		sauceTotal = 0;
+	} else if (selectedSauce === "No Sauce") {
+		sauceTotal = 0;
+	}
+	runningTotal = (runningTotal + sauceTotal);
+	console.log(selectedSauce+" = $"+sauceTotal+".00");
+	console.log("sauce text1: "+text1);
+	console.log("subtotal: $"+runningTotal+".00");
+	document.getElementById("showText").innerHTML=text1;
+	document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 	
 };
